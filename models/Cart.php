@@ -64,26 +64,26 @@
             WHERE u.id = ?
               GROUP BY u.id";
 
-        //Prepare statement
-        $statement = $this->connection->prepare($query);
+      //Prepare statement
+      $statement = $this->connection->prepare($query);
 
-        // Bind ID
-        $statement->bindParam(1, $this->user_id);
+      // Bind ID
+      $statement->bindParam(1, $this->user_id);
 
-        // Execute query
-        $statement->execute();
+      // Execute query
+      $statement->execute();
 
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-        // set properties
-        $this->user_name = $row['user_name'];
-        $this->product_name = $row['product_name'];
-        $this->total_price = $row['total_price'];
-        $this->total_discount = $row['total_discount'];
-        $this->total_after_discount = $row['total_after_discount'];
-        $this->total_tax = $row['total_tax'];
-        $this->total_after_tax = $row['total_after_tax'];
-        $this->grand_total = $row['grand_total'];
+      // set properties
+      $this->user_name = $row['user_name'];
+      $this->product_name = $row['product_name'];
+      $this->total_price = $row['total_price'];
+      $this->total_discount = $row['total_discount'];
+      $this->total_after_discount = $row['total_after_discount'];
+      $this->total_tax = $row['total_tax'];
+      $this->total_after_tax = $row['total_after_tax'];
+      $this->grand_total = $row['grand_total'];
     }
     
     // Insert into database
@@ -159,20 +159,20 @@
                 WHERE users.id = ?
                 GROUP BY users.id';
       
-        //Prepare statement
-        $statement = $this->connection->prepare($query);
+      //Prepare statement
+      $statement = $this->connection->prepare($query);
 
-        // Bind ID
-        $statement->bindParam(1, $this->user_id);
+      // Bind ID
+      $statement->bindParam(1, $this->user_id);
 
-        // Execute query
-        $statement->execute();
+      // Execute query
+      $statement->execute();
 
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-        // set properties
-        $this->user_name = $row['user_name'];
-        $this->grand_total = $row['grand_total'];
+      // set properties
+      $this->user_name = $row['user_name'];
+      $this->grand_total = $row['grand_total'];
     }
     
     public function cart_total_discount() {
@@ -185,20 +185,20 @@
                 WHERE users.id = ?
                 GROUP BY users.id';
       
-        //Prepare statement
-        $statement = $this->connection->prepare($query);
+      //Prepare statement
+      $statement = $this->connection->prepare($query);
 
-        // Bind ID
-        $statement->bindParam(1, $this->user_id);
+      // Bind ID
+      $statement->bindParam(1, $this->user_id);
 
-        // Execute query
-        $statement->execute();
+      // Execute query
+      $statement->execute();
 
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-        // set properties
-        $this->user_name = $row['user_name'];
-        $this->total_discount = $row['total_discount'];
+      // set properties
+      $this->user_name = $row['user_name'];
+      $this->total_discount = $row['total_discount'];
     }
 
     public function cart_total_tax() {
@@ -212,19 +212,19 @@
                 WHERE users.id = ?
                 GROUP BY users.id';
       
-        //Prepare statement
-        $statement = $this->connection->prepare($query);
+      //Prepare statement
+      $statement = $this->connection->prepare($query);
 
-        // Bind ID
-        $statement->bindParam(1, $this->user_id);
+      // Bind ID
+      $statement->bindParam(1, $this->user_id);
 
-        // Execute query
-        $statement->execute();
+      // Execute query
+      $statement->execute();
 
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-        // set properties
-        $this->user_name = $row['user_name'];
-        $this->total_tax = $row['total_tax'];
+      // set properties
+      $this->user_name = $row['user_name'];
+      $this->total_tax = $row['total_tax'];
     }
   }
