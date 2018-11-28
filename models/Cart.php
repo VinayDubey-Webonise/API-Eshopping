@@ -130,7 +130,7 @@
     // Delete data based on user id and product inside cart
     public function delete_single() {
       // Create query
-      $query = 'DELETE FROM ' . $this->table . ' WHERE user_id = :user_id AND product_id = :product_id LIMIT (0,1)';
+      $query = 'DELETE FROM ' . $this->table . ' WHERE user_id = :user_id AND product_id = :product_id LIMIT 1';
       
       // Prepare statement
       $statement = $this->connection->prepare($query);
